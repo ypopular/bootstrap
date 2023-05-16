@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+     <from>
+		  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="ex1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="text" class="form-control" id="ex2">
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="text" class="form-control" id="ex3">
+  </div>
+  
+    <button id="btn" type="button" class="btn btn-primary">Submit</button>
+	  </from>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script>
+	     // 스크립트
+			$("#btn").on("click",function(){
+		//		document.getElementById("btn").on("click",function(){
+				console.log(document.getElementById("ex1").value);
+				console.log(document.getElementById("ex2").value);
+				console.log(document.getElementById("ex3").value);
+				if(document.getElementById("ex1").value.trim() == "" || document.getElementById("ex2").value.trim() == ""|| document.getElementById("ex3").value.trim() == ""){
+					alert("노 데이터")
+				}
+				else if(document.getElementById("ex1").value == "" ||document.getElementById("ex2").value == ""|| document.getElementById("ex3").value == ""){
+				alert("null입니다")
+				$("#ex1").focus();
+				}
+				 else if(document.getElementById("ex1").value != document.getElementById("ex2").value && $("#ex2").val() == document.getElementById("ex3").value){
+					  alert("승인합니다");
+				  }else{
+					  alert("거절합니다");
+				  }
+				  });
+				  // 제이쿼리
+				  
+			$("#btn").on("click",function(){
+				console.log($("#ex1").val());
+				console.log($("#ex2").val());
+				console.log($("#ex3").val());
+				if($("#ex1").val().trim() == "" || $("#ex2").val().trim() == ""|| $("#ex3").val().trim() == ""){
+					alert("노 데이터")
+				}
+				else if($("#ex1").val() == "" || $("#ex2").val() == ""|| $("#ex3").val() == ""){
+				alert("null입니다")
+				$("#ex1").focus();
+				}
+				 else if($("#ex1").val() != $("#ex2").val() && $("#ex2").val() == $("#ex3").val()){
+					  alert("승인합니다");
+				  }else{
+					  alert("거절합니다");
+				  }
+				  });
+			
+
+	  
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
